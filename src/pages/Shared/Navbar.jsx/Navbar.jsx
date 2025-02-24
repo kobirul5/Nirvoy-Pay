@@ -4,11 +4,13 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import LogoutBtn from '../../../components/LogoutBtn';
 import { IoMenu } from "react-icons/io5";
+import useUser from '../../../hooks/useUser';
 
 
 
 const Navbar = () => {
     const { user } = useContext(AuthContext)
+    const [userDB] = useUser()
 
     return (
         <div className="navbar bg-gray-950 text-white backdrop-blur-lg fixed z-10 bg-opacity-30 px-4">
@@ -33,7 +35,7 @@ const Navbar = () => {
                     </> :
                         <div className="dropdown dropdown-end flex justify-center items-center">
                             {/* ToDo: nedded show name */}
-                            <div><a className="btn btn-ghost text-xl pl-0 uppercase">{user?.name}</a></div>
+                            <div><a className="btn btn-ghost text-xl pl-0 uppercase">{userDB?.name}</a></div>
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img

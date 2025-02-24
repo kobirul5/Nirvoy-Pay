@@ -3,17 +3,17 @@ import useAxiosSecure from "./useAxiosSecure";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
 
-const useVerifiedUser = () => {
+const useVerifiedAgent = () => {
      const {user} = useContext(AuthContext)
     const axiosSecure = useAxiosSecure()
-    const { data: verifiedUser = [], refetch } = useQuery({
-        queryKey: ['verifiedUser'],
+    const { data: verifiedAgent = [], refetch } = useQuery({
+        queryKey: ['verifiedAgent'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/user/verify/${user?.email}`);
+            const res = await axiosSecure.get(`/agent/verify/${user?.email}`);
             return res.data;
         }
     })
-    return [verifiedUser, refetch]
+    return [verifiedAgent, refetch]
 };
 
-export default useVerifiedUser;
+export default useVerifiedAgent;

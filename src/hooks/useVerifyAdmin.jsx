@@ -9,7 +9,7 @@ const useVerifyAdmin = () => {
     const { data: verifyAdmin = [],isLoading, refetch } = useQuery({
         queryKey: ['verifiedUser'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/admin/${user.email}`);
+            const res = await axiosSecure.get(`/admin/verify/${user.email}`);
             return res.data;
         }
     })
