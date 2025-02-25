@@ -10,6 +10,11 @@ import SendMoney from "../pages/User/SendMoney";
 import CashIn from "../pages/Agent/CashIn";
 import CashRequest from "../pages/Agent/CashRequest";
 import WithdrawRequest from "../pages/Agent/WithdrawRequest";
+import UserManagement from "../pages/Admin/UserManagment";
+import AgentApproval from "../pages/Admin/AgentApproval";
+import WithdrawApproval from "../pages/Admin/WithdrawApproval";
+import BalanceInquiry from "../pages/Shared/Common/BalanceInquiry";
+import Transition from "../pages/Shared/Common/Transition";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +46,28 @@ export const router = createBrowserRouter([
             {
                 path: '/withdraw-request',
                 element: <WithdrawRequest/>
+            },
+            // admin path
+            {
+                path: '/user-management',
+                element: <UserManagement/>
+            },
+            {
+                path: '/agent-approval',
+                element: <AgentApproval/>
+            },
+            {
+                path: '/withdraw-approval',
+                element: <WithdrawApproval/>
+            },
+            // common
+            {
+                path: '/balance-inquiry',
+                element: <BalanceInquiry/>
+            },
+            {
+                path: '/transition',
+                element: <Transition/>
             },
         ]
     },

@@ -12,8 +12,8 @@ const Home = () => {
     return (
         <div className=" grid grid-cols-3 pt-20 gap-5  px-4">
             {/* 3 type */}
-                <Link  className="btn" >Balance Inquiry</Link>
-                <Link className="btn" >Transition</Link>
+                <Link to="/balance-inquiry" className="btn" >Balance Inquiry</Link>
+                <Link to="/transition"  className="btn" >Transition</Link>
 
             {/* user */}
                 <Link to="/send-money" className="btn" >Send Money</Link>
@@ -25,9 +25,9 @@ const Home = () => {
                 <Link to="/withdraw-request" className="btn" >Withdraw Request</Link>
 
             {/* admin */}
-                <Link className="btn" >User Management</Link>
-                <Link className="btn" >Agent Approval</Link>
-                <Link className="btn" >Withdraw Approval</Link>
+                <Link to="/user-management" className="btn" >User Management</Link>
+                <Link to="/agent-approval" className="btn" >Agent Approval</Link>
+                <Link to="/withdraw-approval" className="btn" >Withdraw Approval</Link>
 
         </div>
     );
