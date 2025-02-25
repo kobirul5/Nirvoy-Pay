@@ -5,6 +5,8 @@ import AuthLayout from "../layout/AuthLayout";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
+import CashOut from "../pages/User/CashOut";
+import SendMoney from "../pages/User/SendMoney";
 
 export const router = createBrowserRouter([
     {
@@ -15,6 +17,14 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/cash-out',
+                element: <CashOut/>
+            },
+            {
+                path: '/send-money',
+                element: <SendMoney/>
             },
         ]
     },
