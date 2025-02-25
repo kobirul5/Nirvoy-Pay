@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const SendMoney = () => {
+const CashIn = () => {
     const [amount, setAmount] = useState('');
-    const [recipientNumber, setRecipientNumber] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (amount && recipientNumber) {
-            alert('Money Sent Successfully!');
+        if (amount && mobileNumber) {
+            alert('Cash In Successful!');
         } else {
             alert('Please fill out all fields.');
         }
@@ -15,8 +15,8 @@ const SendMoney = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-center bg-gray-100">
-            <div className="p-8 rounded-2xl w-full max-w-md">
-                <h2 className="text-2xl font-bold mb-6 text-gray-800">Send Money</h2>
+            <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+                <h2 className="text-2xl font-bold mb-6 text-gray-800">Cash In</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label className="block text-gray-600 mb-2">Amount</label>
@@ -29,24 +29,26 @@ const SendMoney = () => {
                             required
                         />
                     </div>
+
                     <div className="mb-4">
                         <label className="block text-gray-600 mb-2">
-                            Recipient's Mobile Number
+                            Mobile Number
                         </label>
                         <input
                             type="text"
-                            value={recipientNumber}
-                            onChange={(e) => setRecipientNumber(e.target.value)}
+                            value={mobileNumber}
+                            onChange={(e) => setMobileNumber(e.target.value)}
                             className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:border-primary-color"
-                            placeholder="Enter recipient's number"
+                            placeholder="Enter mobile number"
                             required
                         />
                     </div>
+
                     <button
                         type="submit"
-                        className="w-full bg-primary-color text-white py-2 rounded-xl hover:bg-primary-color transition duration-300"
+                        className="w-full bg-green-500 text-white py-2 rounded-xl hover:bg-green-600 transition duration-300"
                     >
-                        Confirm Send Money
+                        Confirm Cash In
                     </button>
                 </form>
             </div>
@@ -54,4 +56,4 @@ const SendMoney = () => {
     );
 };
 
-export default SendMoney;
+export default CashIn;

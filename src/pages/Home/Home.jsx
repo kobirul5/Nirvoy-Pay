@@ -20,9 +20,9 @@ const Home = () => {
                 <Link to="/cash-out" className="btn" >Cash Out</Link>
 
             {/* agent */}
-                <Link className="btn" >Cash In</Link>
-                <Link className="btn" >Cash Request</Link>
-                <Link className="btn" >Withdraw Request</Link>
+                <Link to="/cash-in" className="btn" >Cash In</Link>
+                <Link to="/cash-request" className="btn" >Cash Request</Link>
+                <Link to="/withdraw-request" className="btn" >Withdraw Request</Link>
 
             {/* admin */}
                 <Link className="btn" >User Management</Link>
