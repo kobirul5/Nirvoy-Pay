@@ -67,7 +67,7 @@ const SignUp = () => {
                     <h1 className="text-3xl font-bold">Let's Create a Account!</h1>
                 </div>
                 <div
-                    className="card bg-base-100 w-full  max-w-md shrink-0 shadow-2xl"
+                    className="card w-full  max-w-md shrink-0 shadow-2xl"
                 >
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body pb-4 md:grid md:grid-cols-2">
                         {/* name */}

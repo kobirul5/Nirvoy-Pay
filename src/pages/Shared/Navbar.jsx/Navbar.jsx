@@ -11,10 +11,12 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const Navbar = () => {
     const { user } = useContext(AuthContext)
     const location = useLocation()
-    const [userDB] = useUser()
+    const [userDB, isLoading] = useUser()
     const [isHide, setIsHide] = useState(true)
     console.log(userDB)
-
+    if(isLoading){
+        return <span className="loading loading-bars loading-xs"></span>
+    }
     return (
         <div className="navbar bg-primary-color text-white  fixed z-10  px-4">
             {
@@ -35,13 +37,16 @@ const Navbar = () => {
                     <div className='navbar-center text-sm'>
                         <button
                             onClick={() => setIsHide(false)}
-                            className={`flex justify-center items-center ${isHide ? "block" : "hidden"}`}>
-                            <FaArrowRight /> Balance
+                            className={`flex justify-center items-center ${isHide ? "block" : "hidden"}`}
+                            
+                            >
+                            <FaArrowRight />See Balance
                         </button>
-                        <span
-                            className={`${isHide ? "hidden" : "block"}`}>
+                        <p
+                            className={`${isHide ? "hidden" : "flex"}`}
+                            >
                             {userDB?.totalBalance} tk
-                        </span> </div>
+                        </p> </div>
                     <div className="navbar-end">
                         {
                             !user ? <>
